@@ -1,0 +1,13 @@
+<h1>Result</h1>
+
+<p>
+  <% if @is_word && @in_grid %>
+    "Congratulations! <strong><%= @attempt.upcase %></strong> is a valid English word!"
+  <% elsif !@is_word %>
+    "Sorry but <strong><%= @attempt.upcase %></strong> does not seem to be a valid English word..."
+  <% else %>
+    "Sorry but <strong><%= @attempt.upcase %></strong> cannot be built out of <%= @grid.join(", ") %>"
+  <% end %>
+</p>
+
+<p><%= link_to "Play again", new_path%></p>
